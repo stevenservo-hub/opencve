@@ -61,11 +61,7 @@ function Send-CVEEmail {
     Send-MailMessage @mailMessage
 }
 
-# Example customer equipment list
-$customerEquipment = @(
-    @{ Manufacturer = "Microsoft"; Model = "Windows"; ClientsAffected = "ClientA" },
-    @{ Manufacturer = "Cisco"; Model = "Router"; ClientsAffected = "ClientB" }
-)
+. .\CustomerEquipment.ps1
 
 foreach ($equipment in $customerEquipment) {
     $cveList = Get-CVEinfo -Manufacturer $equipment.Manufacturer -Model $equipment.Model
