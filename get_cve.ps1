@@ -1,3 +1,9 @@
+# This is a skeleton at the moment. There are several features I need to add to make this useable. The idea is that I will import a CSV of client equipment to check for CVEs against services.nvd.nist.gov.
+# When detected, it will send out an email to connectwise that will build a ticket. The email willl contain links to any cve found for given vendors/models and the clients that are potentially affected.
+# The tickets will change priority based on the overall CVE score with >8 being critical 6-8 high and anything <6 being medium. There will be other features added and I will make a TODO.txt so I can track 
+# each feature, you will be able to follow the README to understand how to use implemented features. Use at your own risk. I better not hear any lip for using powershell to do this, im learning the language,
+# I know Python would be a optimal language choice for this. Your brother in Powershell, Steven.
+
 function Get-PreviousDay {
     $datePart = (Get-Date).AddDays(-1).ToString("yyyy-MM-dd")
     return "${datePart}T13:00:00.000%2B01:00"
